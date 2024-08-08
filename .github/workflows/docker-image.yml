@@ -11,7 +11,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-      - name: Replace placeholders in KEYS.json
+    - name: Replace placeholders in KEYS.json
       run: |
         sed -i "s/\${PRIVATE_KEY_ID}/$PRIVATE_KEY_ID/" ./api/KEYS.json
         sed -i "s/\${PRIVATE_KEY}/$PRIVATE_KEY/" ./api/KEYS.json
