@@ -99,3 +99,5 @@ jobs:
       run: terraform apply -lock=false -auto-approve -input=false
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }} 
+        TF_VAR_account_id: ${{ secrets.TF_VAR_GOOGLE_SERVICE_ACCOUNT_ID }}
+        TF_VAR_billing_account: ${{ secrets.TF_VAR_GOOGLE_BILLING_ACCOUNT_ID }}
