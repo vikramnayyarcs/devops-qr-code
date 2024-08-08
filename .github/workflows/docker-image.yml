@@ -11,6 +11,16 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+      - name: Replace placeholders in KEYS.json
+      run: |
+        sed -i "s/\${PRIVATE_KEY_ID}/$PRIVATE_KEY_ID/" ./api/KEYS.json
+        sed -i "s/\${PRIVATE_KEY}/$PRIVATE_KEY/" ./api/KEYS.json
+        sed -i "s/\${CLIENT_ID}/$CLIENT_ID/" ./api/KEYS.json
+      env:
+        PRIVATE_KEY_ID: ${{ secrets.PRIVATE_KEY_ID }}
+        PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+        CLIENT_ID: ${{ secrets.CLIENT_ID }}
+
     - name: Login to Docker Hub
       uses: docker/login-action@v1
       with:
