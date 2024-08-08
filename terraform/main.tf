@@ -1,9 +1,9 @@
 #Create a new project:
-resource "google_project" "my_project" {
-  name       = "DevOps Capstone Challenge"
-  project_id = "devops-capstone-challenge"
-  billing_account = var.billing_account
-}
+# resource "google_project" "my_project" {
+#   name       = "DevOps Capstone Challenge"
+#   project_id = "devops-capstone-challenge"
+#   billing_account = var.billing_account
+# }
 
 #Set the provider:
 provider "google" {
